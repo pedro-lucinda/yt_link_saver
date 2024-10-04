@@ -1,0 +1,191 @@
+.mypy_cache
+
+# Root-level files
+.DS_Store
+Thumbs.db
+*.log
+
+# Server-specific ignores
+server/
+server/__pycache__/
+server/*.py[cod]
+server/*$py.class
+server/.env
+server/.env.local
+server/*.so
+
+# Distribution / packaging
+server/.Python
+server/build/
+server/develop-eggs/
+server/dist/
+server/.pyc
+server/app.log
+server/downloads/
+server/eggs/
+server/.eggs/
+server/lib/
+server/lib64/
+server/parts/
+server/sdist/
+server/var/
+server/wheels/
+server/share/python-wheels/
+server/*.egg-info/
+server/.installed.cfg
+server/*.egg
+server/MANIFEST
+
+# PyInstaller
+server/*.manifest
+server/*.spec
+
+# Installer logs
+server/pip-log.txt
+server/pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+server/htmlcov/
+server/.tox/
+server/.nox/
+server/.coverage
+server/.coverage.*
+server/.cache
+server/nosetests.xml
+server/coverage.xml
+server/*.cover
+server/.hypothesis/
+server/.pytest_cache/
+server/.coverage
+
+# Translations
+server/*.mo
+server/*.pot
+
+# Django stuff:
+server/*.log
+server/local_settings.py
+server/db.sqlite3
+server/db.sqlite3-journal
+
+# Flask stuff:
+server/instance/
+server/.webassets-cache
+
+# Scrapy stuff:
+server/.scrapy
+
+# Sphinx documentation
+server/docs/_build/
+
+# PyBuilder
+server/target/
+
+# Jupyter Notebook
+server/.ipynb_checkpoints
+
+# pyenv
+server/.python-version
+
+# celery beat schedule file
+server/celerybeat-schedule
+
+# SageMath parsed files
+server/*.sage.py
+
+# Environments
+server/.env
+server/.venv
+server/env/
+server/venv/
+server/ENV/
+server/env.bak/
+server/venv.bak/
+
+# Spyder project settings
+server/.spyderproject
+server/.spyproject
+
+# Rope project settings
+server/.ropeproject
+
+# mkdocs documentation
+server/site/
+
+# mypy
+server/.mypy_cache/
+server/.dmypy.json
+server/dmypy.json
+
+# Pyre type checker
+server/.pyre/
+
+# pytype static type analyzer
+server/.pytype/
+
+# Cython debug symbols
+server/cython_debug/
+
+# VS Code settings
+server/.vscode/
+
+# Alchemy migrations
+server/alembic.ini
+
+# Database files
+server/*.db
+server/*.sql
+
+# Docker
+server/docker-compose.yml
+
+# dotenv
+server/.env
+
+# Virtualenv
+server/bin/
+server/include/
+server/lib/
+server/lib64/
+server/pyvenv.cfg
+
+# PyCharm
+server/.idea/
+server/*.iml
+
+# Client-specific ignores
+client/
+/client/node_modules
+/client/.pnp
+/client/.pnp.js
+/client/.yarn/install-state.gz
+/client/.swc
+
+# testing
+/client/coverage
+
+# next.js
+/client/.next/
+/client/out/
+
+# production
+/client/build
+
+# misc
+/client/.DS_Store
+/client/*.pem
+
+# debug
+/client/npm-debug.log*
+/client/yarn-debug.log*
+/client/yarn-error.log*
+
+# local env files
+/client/.env*.local
+
+# vercel
+/client/.vercel
+
+# typescript
+/client/*.tsbuildinfo
+/client/next-env.d.ts

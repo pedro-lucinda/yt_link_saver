@@ -21,24 +21,34 @@ jobs:
             !~/cache/exclude
             **/node_modules
             **/cypress
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('client/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
 
       - name: Install dependencies
-        run: yarn install
+        run: |
+          cd client
+          yarn install
 
       - name: Lint
-        run: yarn lint
+        run: |
+          cd client
+          yarn lint
 
       - name: Build
-        run: yarn build
+        run: |
+          cd client
+          yarn build
 
       - name: Cypress run
-        uses: cypress-io/github-action@v4
-        with:
-          build: yarn build
-          start: yarn start
+        run: |
+          cd client
+          yarn build
+          yarn start &  # Start the app in the background
+          npx wait-on http://localhost:3000  # Wait for the app to be ready
+          yarn cypress run
 
       - name: Test
-        run: yarn test:ci
+        run: |
+          cd client
+          yarn test:ci

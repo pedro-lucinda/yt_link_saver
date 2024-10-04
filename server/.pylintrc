@@ -1,0 +1,30 @@
+[MESSAGES CONTROL]
+disable=
+    C0103,  # Variable name "id" doesn't conform to snake_case naming style,
+    W0611,  # Unused import
+    C0413,  # Import "from sqlalchemy import create_engine" should be placed at the top of the module
+    E0611,  # No name 'context' in module 'alembic'
+    R1705,  # Unnecessary "else" after "return"
+    C0114,  # Missing module docstring
+    C0115,  # Missing class docstring
+    C0116,  # Missing function or method docstring
+    R0903, # Too few public methods
+    C0301, # Line too long
+    R0902, # Too many instance attributes
+    missing-docstring,
+    missing-module-docstring,
+    missing-class-docstring,
+    missing-function-docstring
+
+[FORMAT]
+indent-string = '    '
+
+[BASIC]
+good-names= i, j, k, ex, Run, _
+
+[TYPECHECK]
+ignored-classes=SQLAlchemy
+
+[MASTER]
+ignore=alembic/
+ignore-patterns=alembic/
