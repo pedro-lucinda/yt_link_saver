@@ -1,4 +1,4 @@
-name: ci
+name: CLIENT CI
 on: [push]
 
 jobs:

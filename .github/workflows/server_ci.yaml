@@ -24,5 +24,6 @@ jobs:
         pip install -r requirements.txt
     - name: Lint with pylint
       run: |
+        cd server
         pip install pylint
-        pylint --rcfile=.pylintrc server/app/
+        pylint app/
