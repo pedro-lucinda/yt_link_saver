@@ -44,4 +44,4 @@ sh scripts/format.sh
 ### Linting
 To lint the codebase, run:
 ```bash
-sh scripts/format.sh```
+sh scripts/lint.sh```

@@ -6,7 +6,6 @@ Thumbs.db
 *.log
 
 # Server-specific ignores
-server/
 server/__pycache__/
 server/*.py[cod]
 server/*$py.class

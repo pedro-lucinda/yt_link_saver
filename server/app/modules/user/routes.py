@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException,Depends
+from fastapi import APIRouter, HTTPException, Depends
 
 from app.infra.logger.config import logger
 from .dependencies import get_user_repository
@@ -11,7 +11,6 @@ user_router = APIRouter(prefix="/user", tags=["User"])
 @user_router.get("/", response_model=list[schemas.User])
 def list_users(
     user_repository: UserRepository = Depends(get_user_repository),
-
     skip: int = 0,
     limit: int = 100,
 ):
@@ -42,7 +41,10 @@ def list_users(
 
 
 @user_router.get("/{user_id}", response_model=schemas.User)
-def read_user(user_id: int, user_repository: UserRepository = Depends(get_user_repository), ):
+def read_user(
+    user_id: int,
+    user_repository: UserRepository = Depends(get_user_repository),
+):
     """
     Retrieve a user by their user ID.
 
@@ -75,7 +77,9 @@ def read_user(user_id: int, user_repository: UserRepository = Depends(get_user_r
 
 
 @user_router.post("/", response_model=schemas.User)
-def create_user(user: schemas.UserCreate, user_repository: UserRepository = Depends(get_user_repository)):
+def create_user(
+    user: schemas.UserCreate, user_repository: UserRepository = Depends(get_user_repository)
+):
     """
     Create a new user.
 

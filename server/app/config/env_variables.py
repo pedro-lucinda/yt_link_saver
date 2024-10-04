@@ -42,6 +42,4 @@ def validate_env_variables():
 # Load environment variables from .env file
 LOGGER_TOKEN = os.getenv("LOGGER_TOKEN")
 DATABASE_URL = os.getenv("DATABASE_URL") or "postgresql://myuser:mypass@localhost:5432/mydatabase"
-ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS").split(",")
-
-
+ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS") or "http://localhost:3000"
