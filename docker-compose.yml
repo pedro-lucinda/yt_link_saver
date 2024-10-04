@@ -1,0 +1,46 @@
+version: '3.8'
+services:
+  # PostgreSQL database service for the server
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypass
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  # FastAPI service (server)
+  fastapi-app:
+    build:
+      context: ./server
+    environment:
+      DATABASE_URL: postgresql://myuser:mypass@postgres/mydatabase
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    volumes:
+      - ./server:/code
+      - ./server/app:/code/app
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+
+  # Next.js service (client)
+  nextjs-app:
+    build:
+      context: ./client
+    environment:
+      NODE_ENV: development
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    command: ["yarn", "dev"]
+    depends_on:
+      - fastapi-app
+
+volumes:
+  pgdata:

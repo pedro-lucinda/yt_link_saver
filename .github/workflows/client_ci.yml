@@ -40,13 +40,20 @@ jobs:
           cd client
           yarn build
 
-      - name: Cypress run
+      - name: Update Browserslist
         run: |
           cd client
-          yarn build
-          yarn start &  # Start the app in the background
-          npx wait-on http://localhost:3000  # Wait for the app to be ready
-          yarn cypress run
+          npx update-browserslist-db@latest
+
+      - name: Run Cypress Tests
+        uses: cypress-io/github-action@v4
+        with:
+          working-directory: client
+          build: yarn build
+          start: yarn start
+          wait-on: 'http://localhost:3000'
+          wait-on-timeout: 120
+          browser: chrome
 
       - name: Test
         run: |
