@@ -7,7 +7,8 @@ from app.infra.db.database import Base  # Make sure this is the right declarativ
 
 # If models are in separate modules and use the same declarative base,
 # importing them here ensures they're known to the MetaData
-from app.modules.user.models import *
+from app.modules.links.models import *
+
 
 # Alembic Config object, which provides access to the .ini file in use.
 config = context.config

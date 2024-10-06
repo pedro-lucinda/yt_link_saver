@@ -10,9 +10,7 @@ namespace exposed by the module and prevent unintended imports.
 """
 
 # Import models from each module
-from app.modules.user.models import User
+from app.modules.links.models import Link
 
 # Expose them through a single interface
-__all__ = [
-    "User"
-    ]
+__all__ = [ "Link"]
