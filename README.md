@@ -28,6 +28,8 @@ The frontend is a Next.js application that provides a user interface for interac
 - **Cypress**: End-to-end testing framework for UI tests.
 - **Jest**: Testing framework for unit and integration tests.
 - **Zustand**: State management library.
+- **Backend for Frontend (BFF)**: The frontend utilizes a BFF pattern, where it communicates with an intermediary backend service specifically designed to meet the frontend's needs. This reduces the complexity of frontend-backend interactions.
+- **Service Adapter**: A service adapter layer is used to abstract API requests, ensuring that the frontend interacts with a clean and structured interface, simplifying code maintenance and testing.
 
 ## Backend (FastAPI)
 
