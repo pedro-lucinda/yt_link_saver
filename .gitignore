@@ -154,7 +154,6 @@ server/.idea/
 server/*.iml
 
 # Client-specific ignores
-client/
 /client/node_modules
 /client/.pnp
 /client/.pnp.js
