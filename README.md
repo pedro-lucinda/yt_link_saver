@@ -57,6 +57,20 @@ To run the backend and associated services (PostgreSQL) using Docker Compose:
 docker-compose up --build
 ```
 
+### Making Database Migrations
+
+To create new database migrations after model changes:
+
+```bash
+alembic revision --autogenerate -m "name"
+```
+
+- To apply migrations to the database:
+
+```bash
+  alembic upgrade head
+```
+
 ### Important Notes
 
 - Ensure your `.env` files are correctly configured with the appropriate credentials and URLs for both backend and frontend.
